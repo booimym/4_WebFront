@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_이미지 관련 태그</title>
+
+    <style>
+        div{
+            border : 1px solid black;
+            background-color: #ccc;
+            width : 1000px;
+            height : 300px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+   <h1>이미지 관련 태그(img)</h1> 
+
+
+   <pre>
+
+    -웹 문서에 사진이나 그림 같은 이미지를 삽입하는 용도의 태그
+
+    -img태그는 내용이 없으므로 종료 태그가 존재하지 않음. (<><>사이에 내용을 안쓰는거임)
+
+    <strong style = "color :blue">※ img 태그는 인라인 형식이다.</strong>
+    <br>
+    [속성]
+
+    1)src : 삽입할 이미지의 경로를 지정하는 속성(파일 경로, 웹 주소)
+    
+    2)width/height : 이미지의 크기를 지정하는 속성
+
+    3)alt : 이미지를 설명하는 속성
+
+        1) 이미지가 출력되지 않는 경우_설명해주는 용도
+        2) 웹 접근성(시각 장애인)용_스크린 리더가 읽어준다...
+   </pre>
+
+   <h3>src 속성</h3>
+
+   <h4>웹 주소를 이용한 이미지 출력</h4>
+   <img src = "https://item.kakaocdn.net/do/49a292677e5b578a8985bb315c19700c9f5287469802eca457586a25a096fd31">
+   <img src = "https://item.kakaocdn.net/do/49a292677e5b578a8985bb315c19700ca88f7b2cbb72be0bdfff91ad65b168ab">
+   <img src = "https://item.kakaocdn.net/do/49a292677e5b578a8985bb315c19700c4022de826f725e10df604bf1b9725cfd">
+   
+   <h4>현재 컴퓨터에 존재하는 이미지 출력</h4>
+
+   <pre>
+     -절대 경로 : 하나의 절대적인 기준점을 토대로 목표하는 위치까지 이동하는 경로
+    
+        ex) 서울시 중구 남대문로 120 2층 B강의장
+        ex) C : / D : 등의 드라이브 폴더가 기준.
+        ex) C:\Users\user1\eclipse-workspace\4_WebFront\images\cats\cat1.jpg
+
+
+        ex) VSCODE는 워크스페이스(열려있는 최상위폴더)가 기준이 됨
+        -> 이런식으로 써야 됨 : /images/cats/cat1.jpg
+        <img src = "/images/cats/cat1.jpg" width = "500px" height = "300px">
+        
+        
+        
+        -상대 경로 : 현재 위치를 기준으로 목표하는 위치까지 이동하는 경로를
+        
+        ex) 옆반
+        
+        ex) 작성중인 파일이 기준임
+        .. : 상위 폴더로 이동
+        / : 하위폴더, 파일 지정
+        <img src = "../images/dogs/dog1.jpg" width = "500px" height = "300px">
+   </pre>
+
+
+   <hr>
+
+    <alt>alt 속성</alt>
+
+    <img src = "../images/flowers/flower11.jpg" alt = "빨간 꽃" > 
+
+  <hr>
+
+  <h3>width / height</h3>
+
+  <pre>
+
+    - 고정 크기 단위 : 화면 크기와 관계 없이 항상 지정된 크기 값을 갖는 단위
+    ex) px, pt 
+    (화면 크기 줄이면, 다음 줄로 넘어가거나 이런 식으로 대응하지 사진 크기가 줄여지지 않음...)
+
+    - 가변 크기 단위 : 화면이나 영역에 따라 크기가 변하는 단위
+    ex) %, em, rem 
+
+  </pre>
+
+  <h4>고정 크기 단위(px)</h4>
+  <img src = "../images/dogs/dog2.jpg" width="300px" height = "240px">
+  <img src = "../images/dogs/dog3.jpg" width="300px" height = "240px">
+  <img src = "../images/dogs/dog4.jpg" width="300px" height = "240px">
+  <img src = "../images/dogs/dog5.jpg" width="300px" height = "240px">
+
+  <div>
+    <img src = "../images/dogs/dog2.jpg" width="300px" height = "240px">
+    <img src = "../images/dogs/dog3.jpg" width="300px" height = "240px">
+    <img src = "../images/dogs/dog4.jpg" width="300px" height = "240px">
+    <img src = "../images/dogs/dog5.jpg" width="300px" height = "240px">
+  
+  </div>
+  
+  ※ 가로로는 넘어가지 않는데, 세로로는 영역을 벗어날 수 있음...
+
+
+  <hr>
+  <h4>가변 크기 단위(%)</h4>
+  <img src = "../images/dogs/dog1.jpg" width="15%" height = "240px">
+  <img src = "../images/dogs/dog2.jpg" width="15%" height = "240px">
+  <img src = "../images/dogs/dog3.jpg" width="15%" height = "240px">
+  <img src = "../images/dogs/dog4.jpg" width="15%" height = "240px">
+  <img src = "../images/dogs/dog5.jpg" width="15%" height = "240px">
+
+  <div>
+    <img src = "../images/cats/cat2.jpg" width="24%" height = "50%">
+    <img src = "../images/cats/cat3.jpg" width="24%" height = "50%">
+    <img src = "../images/cats/cat4.jpg" width="24%" height = "50%">
+    <img src = "../images/cats/cat5.jpg" width="24%" height = "50%">
+  </div>
+  ※ div안에 들어있으니까 그 안에서는 가변적이지만
+  div자체가 고정이니까 화면 크기 바뀌어도 고정적임.
+
+
+
+
+  
+</body>
+
+
+
+</html>

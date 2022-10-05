@@ -79,7 +79,7 @@ div{
     float : left;
 }
 
-.col-1 > img {/*열....?머라고? */
+.col-1 > img {/*열 내부의 이미지 크기 조정 */
     width:100%;
     height: 100%;
 }

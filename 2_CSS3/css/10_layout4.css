@@ -1,0 +1,138 @@
+.test {
+    width: 70px;
+    height: 70px;
+    border : 1px solid black;
+    background-color: rgba(255,0,0,0.3);/*투명한 색깔*/
+
+    /* 절대적인 위치를 가질 수 있게 설정 */
+    position : absolute;
+    
+    left : 200px; /*왼쪽에서부터 0px 떨어진 위치에 배치*/
+    top : 200px; /*위에서부터 0px 떨어진 위치에 배치*/
+
+}
+
+.container1{
+    border : 2px solid black;
+    width : 300px;
+    height : 300px;
+
+    position : relative;
+    /* 내부에 작성되는 요소에 상대적인 위치의 [[기준]]으로 설정한다. */
+}
+
+.container1 > div{
+    box-sizing : border-box; /*content+padding+border 의 합이 w/h와 같게 content의 비율을 자동 조정한다.*/
+
+    border: 1px solid black;
+
+    border-radius: 50%;
+}
+
+.first{
+    width : 300px;
+    height: 300px;
+
+    background-color: rgb(79, 109, 241);
+
+    position : absolute;
+
+    top : 0px;
+    left: 0px;
+
+    z-index : 1;
+}
+
+.second {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 255, 134);
+
+    position : absolute;
+    /* absolute 요소끼리 겹치게 된 경우
+        나중에 해석되는 HTML요소가 위쪽에 오게 된다. 
+        */
+
+    /* top: 50px; */
+    /* left:50px; */
+
+    right: 50px;
+    /* 오른쪽에서 50px 떨어진 위치에 배치해라... */
+    bottom:50px;
+    /* 바닥에서 50px 떨어진 위치에 배치해라... */
+
+    z-index:2;
+
+}
+
+.third { 
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 40, 40);
+
+    position : absolute;
+
+    top:100px;
+    left:100px;
+
+    z-index:10;
+
+}
+
+
+/* 요소를 정가운데 배치하기 
+
+1)감싸는 요소가 position : relative;
+2)배치될 요소가 position : absolute;
+3)배치될 요소를 사방으로 잡아당김 
+    (top,bottom,left,right)요소들을 이용해서....
+4)배치될 요소에 margin:auto;를 추가하여
+감싸는 요소와의 간격을 자동으로 조정함 -> 가운데 배치
+
+*/
+
+    
+#center{
+    width: 50px;
+    height:50px;
+    background-color: aqua;
+
+    position:absolute;
+
+    bottom:0; /*bottom에서 0만큼 떨어져 배치*/
+    right:0; /*right에서 0만큼 떨어져 배치*/
+    top:0; /*top에서 0만큼 떨어져 배치*/
+    left:0; /*left에서 0만큼 떨어져 배치*/
+
+    margin:auto; /*다른 요소와의 상하좌우 간격을 자동으로 조정*/
+}
+
+.fixed-area{
+    border:1px solid black;
+    width : 100px;
+    text-align:center; /*내부에 작성된 글,inline요소를 가운데 정렬시키는 속성*/
+
+    position : fixed;
+    /* absolute는 body, 감싸는 영역을 기준으로 배치됨 
+        fixed는 화면(브라우저,뷰포트)를 기준으로 배치가 됨...
+
+        *브라우저를 기준*으로 배치가 되기 때문에, 화면을 늘렸다 줄였다 하든 계속 같은 위치
+    */
+
+    bottom : 100px;
+    right : 20px;
+}
+
+/* sticky */
+#sticky-title{
+    margin:0; 
+    /*h1의 고유 margin을 삭제함.*/
+    background-color: violet;
+    color: white;
+    padding : 40px 20px 20px;
+            /* 상  좌우 하 */
+
+    position : sticky;
+    top:-20px; /*요소가 화면을 벗어났을 때 위쪽으로 -20px 위치에 고정시키겠다는 뜻*/
+    z-index : 100; /*absolute요소에 아래로 겹치지 않도록 지정하기*/
+}

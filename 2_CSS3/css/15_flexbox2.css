@@ -30,7 +30,7 @@
                          나머지에
                          cross-axis 방향으로 동일한 크기의 공간을 나눠주어 배치
     */
-
+    align-content: space-evenly;
     align-content: space-between;
 
 }

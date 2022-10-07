@@ -114,10 +114,10 @@
      /* align-items: flex-start; */
 
      /* flex-end : cross-axis의 끝 지점을 기준으로 배치  */
-     align-items: flex-end;
+     /* align-items: flex-end; */
 
      /* center : cross-axis의 가운데 지점을 기준으로 배치  */
-     align-items: center;
+     /* align-items: center; */
 
     /* baseline : item 내부에 있는 content가 모두 한 줄에 배치될 수 있도록
                 각각의 item을 cross-axis 방향으로 움직이는 속성*/

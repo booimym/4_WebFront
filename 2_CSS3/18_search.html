@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색창</title>
+
+    <style>
+       *{box-sizing : border-box;} 
+
+        /* 검색창 전체 너비 지정 */
+        .search-area{width: 500px;}
+
+        /* 검색창 테두리 */
+        .search-area fieldset {
+            padding: 2px;
+            margin: 0;
+            border: 2px solid #455ba8;
+            border-radius: 5px;
+
+            display:flex;
+        }
+
+        /* 검색어 입력 상자 */
+        #query{
+            padding : 10px;
+            font-size: 18px;
+            font-weight: bold;
+
+            /* 테두리없애기 */
+            /* border:0; none; 둘 다 가능*/
+            border: none;
+
+            /* outline: input요소에 포커스가 맞춰졌을 때, 이를 표현하기 위한 바깥선 */
+            outline : 0 ;
+
+            width: 92%;
+        
+        }
+
+        /* 검색 버튼 */
+        #search-btn{
+            width  :8%;
+            background-color: white;
+            border : none;
+            /* icon은 보통 특수문자 같은 문자로 취급되어서 글자,글꼴 스타일 적용 가능*/
+            font-size: 1.2em; /*1.2em = 120%*/
+            color : #455ba8;
+            cursor : pointer; 
+        }
+    </style>
+
+    <!-- fontawesome 사이트에서 제공하는 아이콘을 이용하겠다.  -->
+    <script src="https://kit.fontawesome.com/f7459b8054.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <article class = "search-area">
+
+        <!-- form : 내부 input 태그의 값을 서버 또는 페이지로 전달(제출) -->
+        <form action = "#">
+            <fieldset>
+                <input type = "search" id="query" name="query"
+                placeholder="검색어를 입력해주세요" >
+                <button type ="submit" id="search-btn" class="fa-solid fa-magnifying-glass">
+                    <!-- 돋보기는 글자(특수문자)로 취급되기 때문에, font-size 등 다 적용됨(꾸미기 가능!) -->
+                </button>
+            </fieldset>
+        </form>
+    </article>
+    
+</body>
+</html>

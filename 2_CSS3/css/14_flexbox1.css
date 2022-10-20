@@ -54,9 +54,11 @@
         둘을 한번에 지정하는 속성이 존재함.
 
     */
-    /*  flex-flow :          column             nowrap; */
+     /* flex-flow :          column             nowrap; */
 
     flex-flow : row nowrap;
+    /* flex-flow : column nowrap; */
+    /* flex-flow : row wrap; */
                 
     /* ************************* */
     /* ****justify-content****** */
@@ -86,14 +88,14 @@
     /* justify-content: space-around; */
 
     /* space-evenly : item이 main-axis 방향으로 동일한 간격을 가지도록 지정한다. */
-    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
 
 
     /* space-between :  양 끝의 item을 main-axis 시작 / 끝 지점에 붙인 상태에서
                     item들이 동일한 간격을 가지게 지정하는 것.
 
     */
-    justify-content : space-between;
+    /* justify-content : space-between; */
 
     /* ************************* */
     /* *******align-items******* */
@@ -107,21 +109,21 @@
         감싸고 잇는 flex-container의 크기와 같은 크기를 가지도록
         늘리는 속성
      */
-     /* align-items: stretch;  */
+     align-items: stretch; 
      /*stretch가 기본값임*/
 
      /* flex-start : cross-axis의 시작 지점을 기준으로 배치  */
      /* align-items: flex-start; */
 
      /* flex-end : cross-axis의 끝 지점을 기준으로 배치  */
-     /* align-items: flex-end; */
+     align-items: flex-end;
 
      /* center : cross-axis의 가운데 지점을 기준으로 배치  */
      /* align-items: center; */
 
     /* baseline : item 내부에 있는 content가 모두 한 줄에 배치될 수 있도록
-                각각의 item을 cross-axis 방향으로 움직이는 속성*/
-    align-items : baseline;
+                각각의 item을 cross-axis 방향(row일 경우...세로)으로 움직이는 속성*/
+    /* align-items : baseline; */
 }
 
 .item2{ padding :10px;}

@@ -5,6 +5,7 @@ div{
 
 .item{
     width: 75px;
+    /* width: 300px; */
     height: 75px;
 }
 .item1{background-color: red;}

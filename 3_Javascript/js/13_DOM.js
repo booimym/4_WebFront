@@ -1,0 +1,108 @@
+
+// Node 확인하기
+document.getElementById("btn1").addEventListener("click",function(){
+    
+    //[부모]
+    //요소.parentNode : 요소의 부모 노드를 탐색해서 반환한다.
+    
+    //[자식]
+    //요소.childNodes : 요소의 자식 노드를 모두 반환한다(NodeList 형태)
+    //요소.firstChild : 첫 번째 자식 노드를 탐색해서 반환한다.
+    //요소.lastChild : 마지막 자식 노드를 탐색해서 반환한다.
+
+    //요소.childNodes[인덱스] : 인덱스번째 자식 노드를 탐색해서 반환한다.
+
+
+    //[형제]
+    //요소.previousSibling : 요소의 이전 형제 노드를 반환한다.
+
+    //요소.nextSibling : 요소의 다음 형제 노드를 반환한다.
+
+    // #test의 자식 노드를 모두 얻어와서 확인해볼 것임!!!
+    const testNodeList = document.getElementById("test").childNodes; //childNodes는 함수()아니고 속성임...ㅇㅇㅇ
+
+    console.log(testNodeList);
+
+    // 노드 탐색
+    const li1 = document.getElementById("li1");
+    console.log(li1.parentNode); //부모 노드 탐색(ul#test)
+
+    //#li1의 부모의 배경색을 orange로 변경 (노드 탐색 활용 방법)
+    li1.parentNode.style.backgroundColor = "orange";
+
+    //#li1의 부모 노드의 마지막 부분에 "ABCD"라는 text node를 추가하겠다!
+    li1.parentNode.append("ABCD");
+
+    const test = document.getElementById("test");
+
+    //#test의 첫번째 자식 노드 찾기
+    console.log(test.firstChild); //#text ->  "\n        "임...
+    
+    //#test의 마지막 자식 노드 찾기
+    console.log(test.lastChild); //ABCD
+    
+    //#test의 자식 노드 중 5번 인덱스 노드 찾기
+    console.log( test.childNodes[5] )
+    //#test의 자식 노드 중 5번 인덱스 노드의 마지막 자식으로 "ZZZ" 추가하기
+    test.childNodes[5].append("ZZZ");
+
+    //#test의 자식 노드 중 5번 인덱스의 이전 형제 노드
+    console.log( test.childNodes[5].previousSibling ); //4번- text
+    //#test의 자식 노드 중 5번 인덱스의 다음 형제 노드
+    console.log( test.childNodes[5].nextSibling ); //6번- text
+
+    // 노드 탐색 구문 연속 작성
+    // #test의 자식 노드 중 5번 인덱스의 이전 형제 노드의 이전 형제 노드
+    console.log( test.childNodes[5].previousSibling.previousSibling ); //3번- li#li1
+
+
+
+})
+
+//Element(요소) 탐색 확인
+document.getElementById("btn2").addEventListener("click", function(){
+
+    const test = document.getElementById("test"); //부모 요소
+    const li1 = document.getElementById("li1"); //자식 요소
+
+    //#li1의 부모 요소 탐색
+    console.log(li1.parentElement);
+
+    //#li1의 부모 요소의 부모요소 탐색
+    console.log(li1.parentElement.parentElement);
+
+    // #test의 모든 자식 요소 탐색
+    const list = test.children;
+
+    console.log(list); //nodeList가 아니고 요소끼리만 있으니까 HTMLCollection형태로 반환됨.
+
+    //#test의 첫 번째 자식 요소
+    console.log(test.firstElementChild);
+    //#test의 마지막 자식 요소
+    console.log(test.lastElementChild);
+    //#test의 자식 요소 중 2번째 인덱스
+    console.log(list[2]);
+    //#test의 자식 요소 중 2번 인덱스의 이전 형제 요소 클릭시
+    //작성된 내용을 alert로 출력
+    list[2].previousElementSibling.addEventListener("click",function(){
+
+        // this == 이벤트가 발생한 요소 ==(2번 인덱스의 이전형제요소) 2번클릭했을 때임ㅋㅋㅋ
+        alert(this.innerText);
+
+        // 이벤트가 발생한 요소의 다음 다음 형제 요소의 배경색을 red로 변경
+        this.nextElementSibling.nextElementSibling.style.backgroundColor = "red";
+
+    })
+
+
+    // children : 자식 요소만 모두 선택
+    // parentElement : 부모 요소 선택
+
+    // firstElementChild : 첫 번째 자식 요소 선택
+    // lastElementChild  : 마지막 자식 요소 선택
+
+    // previousElementSibling : 이전 형제 요소 선택
+    // nextElementSibling     : 다음 형제 요소 선택
+
+
+})
